@@ -63,6 +63,32 @@ src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js">
 </video>
 
 
+
+
+  <div id="play-button" >
+  <img id="play-img" src="/images/playback_play.png"></img>
+</div>
+
+<script>
+$(document).ready(function(){
+  //播放按钮点击
+  var audio = $("#bgaudio")[0];
+  var img = $("#play-img")[0];
+  $("#play-button").click(function(){ 
+    if (audio.paused || audio.ended) {
+      audio.play();
+      img.src = "/images/playback_pause.png";
+    } else {
+      audio.pause();
+      img.src = "/images/playback_play.png";
+    }
+  });
+});
+</script>
+
+
+
+
 <div id="me-button">
 		<img id="play-img" src="/images/me_n.png">
 		</img>
@@ -73,23 +99,17 @@ src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js">
 
     
     
-    <a class="social-a" href="http://weibo.com/3169700852/" target="_blank">
-        <img src="/images/weibo.png">
+    <a class="social-a" href="https://www.zhihu.com/people/xiayu-gu/activities" target="_blank">
+        <img src="/images/zhihu.png">
     </a>
     
 
     
     
-    <a class="social-a" href="https://github.com/iHongRen" target="_blank">
+    <a class="social-a" href="https://github.com/shaky-maple" target="_blank">
         <img src="/images/github.png">
     </a>
     
-
-    
-    
-    <a class="social-a" href="https://twitter.com/ihongren" target="_blank">
-        <img src="/images/twitter.png">
-    </a>
     
 
 
@@ -110,37 +130,7 @@ src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js">
 <![endif]-->
 
 
-<script>
 
-$(document).ready(function(){
-  //判断是否该显示’关于我‘
-  if( "home_about"  == 'home_about') {
-    $("#about-me").hide(0);
-
-    //加载about(关于)读取文件
-    var s = $('article').html();
-    if (s.length < 2) {
-      var url = window.location.protocol+"//"+window.location.host+"/about/";
-      $.ajax({ 
-          type: "GET", 
-          url: url, 
-          dataType: "html", 
-          success: function (data) { 
-            $('article').html($(data).find('article').html());//解析about的html
-            $("#about-me").css({"visibility": "visible"}).delay(100);
-            $("#about-me").slideToggle('slow');
-          }
-      }); 
-      }
-
-    //个人按钮点击，隐藏和显示关于界面
-    $("#me-button").click(function(){ 
-      $("#social-div").slideToggle();
-      $("#about-me").slideToggle();
-    });
-  }
-});
-</script>
 
 
 
@@ -154,12 +144,11 @@ $(document).ready(function(){
 <div id="bottom-outer">
   
   <div id="bottom-inner">
-    GU XIA YU
+    John Doe 
     ©2017 |Powered by  
-    <a href="http://hexo.io" target="_blank">Hexo</a> with theme Legend
+    <a href="http://hexo.io" target="_blank">Hexo</a> with theme legend.
   </div>
     
-      
 </div> 
 
 
