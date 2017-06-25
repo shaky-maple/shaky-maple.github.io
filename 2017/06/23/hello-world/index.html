@@ -20,7 +20,7 @@ src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js">
     
     
       <link rel="stylesheet" href="/css/legend.css">
-    
+    <title>GUXIAYU|网络日志</title>
   
 </head>
 
@@ -83,55 +83,6 @@ src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js">
       <div id="play-button"  style="background-color: #6d5aca; border: solid 2px #6d5aca;">
   <img id="play-img" src="/images/playback_play.png"></img>
 </div>
-<audio id="bgaudio" loop="loop" preload="none"> 
-  <source src=http://cdn.calm.com/scenes/scene-Qqkzy9k7Eo.m4a?v=1418162240715 type="audio/mpeg">
-</audio>
-
-<script>
-$(document).ready(function(){
-  //播放按钮点击
-  var audio = $("#bgaudio")[0];
-  var img = $("#play-img")[0];
-  $("#play-button").click(function(){ 
-    if (audio.paused || audio.ended) {
-      audio.play();
-      img.src = "/images/playback_pause.png";
-    } else {
-      audio.pause();
-      img.src = "/images/playback_play.png";
-    }
-  });
-});
-</script>
-    
-
-    
-    
-
-  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-    <div id="reward_comment">文章对我有帮助，打赏作者</div>
-    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-      <span>赏</span>
-    </button>
-    <div id="QR" style="display: none;">
-      
-        <div id="wechat" style="display: inline-block">
-          <img id="wechat_qr" src="/images/wechatpay.png" alt="John Doe WeChat Pay"/>
-          <p>微信</p>
-        </div>
-      
-      
-        <div id="alipay" style="display: inline-block">
-          <img id="alipay_qr" src="/images/alipay.png" alt="John Doe Alipay"/>
-          <p>支付宝</p>
-        </div> 
-      
-    </div>
-  </div>
-
-
-  
-
     </div>
 
     <!-- 多说评论框 -->    
@@ -144,17 +95,10 @@ $(document).ready(function(){
 <div id="bottom-outer">
   
   <div id="bottom-inner">
-    John Doe 
+    GU XIA YU 
     ©2017 |Powered by  
-    <a href="http://hexo.io" target="_blank">Hexo</a> with theme 
-    <a href="https://github.com/iHongRen/legend" target="_blank">legend</a>
+    <a href="http://hexo.io" target="_blank">Hexo</a> with theme legend.
   </div>
-    
-    
-    
-      <a href="/atom.xml">
-      
-      <img src=/images/rss.png height="18" width="18">
       
 </div> 
 
