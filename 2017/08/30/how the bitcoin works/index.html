@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="这篇文章非常长:)为了节省时间，我并没有逐字逐句的翻译，应该说这篇文章非常详细的介绍了比特币的原理。原文作者是:Michael Nielsen,如果你想阅读原文,这里是原文链接同时bitcoin也有自己的标准文档,当然这份文档写得比较简单,只是对bitcoin的部分核心思想做了简介,同时目前还没有中">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="GU XIAYU">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="How the Bitcoin actually works?"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Technology, Life and Tangent!"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>How the Bitcoin actually works? - Technology, Life and Tangent!</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="/img/icon.png">
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Donnadie</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/shaky-maple/shaky-maple.github.io">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>How the Bitcoin actually works?</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-08-30
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Technology/">#Technology</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/2017-9/">2017-9</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>这篇文章非常长:)为了节省时间，我并没有逐字逐句的翻译，应该说这篇文章非常详细的介绍了比特币的原理。<br>原文作者是:Michael Nielsen,如果你想阅读原文,这里是<br><a href="http://www.michaelnielsen.org/ddi/how-the-bitcoin-protocol-actually-works/" target="_blank" rel="external">原文链接</a><br>同时bitcoin也有自己的<a href="https://bitcoin.org/bitcoin.pdf" target="_blank" rel="external">标准文档</a>,当然这份文档写得比较简单,只是对bitcoin的部分核心<br>思想做了简介,同时目前还没有中文版本:)。需要注意的是本文是在自己设计数字货币的过程中解释设计思想,并不是解释bitcoin的协议内容。</p>
+<p>原文假设你已经了解<em>对称加密(public key cryptography)</em><br><em>数字签名(digital signatures)</em> 和<br><em>哈希函数(hash fuction)</em> </p>
+<p>如果有时间,我会写几篇关于hash和几种对称加密算法的文章。</p>
+<h2 id="First-steps-a-signed-letter-of-intent"><a href="#First-steps-a-signed-letter-of-intent" class="headerlink" title="First steps: a signed letter of intent"></a>First steps: a signed letter of intent</h2><p>我如何设计一种数字货币呢? 数字货币听上去不怎么可能:)假设我们的Alice想要使用一串字符作为货币,我们如何防止她重复使用这串字符,另外<br>我们如何防止有人伪造这串字符，从而达到从Alice那里偷钱的目的呢，要想使用这串字符作为货币，我们必须先解决这两个问题<br>作为infocoin的第一个版本，我们想办法能让Alice用上数字货币(当然是原始的和不完整的infocoin)<br>1.如何防止他人伪造<br>假设Alice想给Bob 1 infocoin,为了做到这一点Alice写下”I, Alice, am giving Bob one infocoin”<br>然后Alice使用她的私钥给这段文字加上了一个数字签名,并向全世界广播这段信息<br>[原文注]我使用”Infocoin”来代指infocoin协议和此货币的一般概念，使用小写的”infocoin”来代指具体的货币<br>全世界所有人都可以使用Alice的公钥来证明这段信息就是Alice本人的意愿,同样Alice也不能后悔说她没想要给Bob钱<br>同样也没有任何其他人能构造(伪造)这样一个带有签名的信息。当然在Alice广播完这条信息之后，别人可能会复制这条信息，这种形式的伪造对于infocoin来说是可能的<br>这样就达到了表达Alice意愿和保护Alice的目的</p>
+<h2 id="使用序列号使infocoin独一无二-Using-serial-numbers-to-make-coins-uniquely-identifiable"><a href="#使用序列号使infocoin独一无二-Using-serial-numbers-to-make-coins-uniquely-identifiable" class="headerlink" title="使用序列号使infocoin独一无二(Using serial numbers to make coins uniquely identifiable)"></a>使用序列号使infocoin独一无二(Using serial numbers to make coins uniquely identifiable)</h2><p>第一个版本的infocoin有一个问题,Alice可以一直给Bob发这条信息，假设Bob收到了十份这样的信息“I, Alice, am giving Bob one infocoin”<br>这是否意味着Alice发给Bob十份不同的infocoin,也许Alice只是想开个玩笑,因此我们需要一个标签或者是序列号(serial numbers)<br>Alice会这样写”I, Alice, am giving Bob one infocoin, with serial number 8740348”过了一会儿当Alice幽香给Bob一个infocoin时<br>她会这样记录”I, Alice, am giving Bob one infocoin, with serial number 8770431”这样Bob就知道这又是另一枚infocoin<br>为了引入serial numbers ，一种可行的办法是引入”银行”, 银行能为每个infocoin分配序列号，并跟踪谁有哪些infocoin,证明交易合法<br>更具体一点说，假设Alice去了银行然后说我要去一块infocoin，银行从Alice的账户取了一块，并分配了序列号，假设是1234567,当她把这1 infocoin给Bob时Bob<br>要联系银行并确认:<br>    (a).此序列号属于Alice<br>    (b).Alice没有花过这个infocoin<br>当这两个都满足时，银行将这枚infocoin归给Bob，同时不再属于Alice</p>
+<h2 id="中心化银行-Making-everyone-collectively-the-bank"><a href="#中心化银行-Making-everyone-collectively-the-bank" class="headerlink" title="中心化银行(Making everyone collectively the bank)"></a>中心化银行(Making everyone collectively the bank)</h2><p>刚才的解决方案看上去相当不错，但我们还能做得更好，我们完全可以不需要银行，这意味着货币不再被某一单独机构掌管，这个主意使每个人都成了银行，我们考虑每个<br>使用infocoin的人都拥有哪枚infocoin属于谁的记录，可以称它为账本(ledger),通常这个账本又被叫做区块链(block chain),在Bitcoin中就是这么叫得，我们也把它引入infocoin<br>现在假设Alice想转给Bob 1 infocoin，她会这样记录”I, Alice, am giving Bob one infocoin, with serial number 1234567”,Bob将/他收到/的信息/记录到自己的Ledger上，同时<br>将/他收到/的信息和Alice的原始信息一同广播到全网，接着所有人都将这两条信息记录到自己的Ledger上。<br>现在我们仍然有个问题，序列号来自哪里？但现在这个问题变得很好解决,一个更具挑战的问题是目前的infocoin允许Alice double spending欺骗,就是Alice给两个人发同一条信息<br>假设是Bob和Charlie,结果这两个人收到之后同时检查这枚infocoin是否是Alice花的,这就会导致两人都会获得这枚infocoin,那该如何处理这个问题呢？一个很明显的解决方法是当Alice先给Bob<br>发是Bob不立即检查，而是向全infocoin广播，问他们这笔交易是否合法，如果他们共同认为合法则Bob接受交易，然后所有人都更新Ledger，这种协议防止Alice double spent，因为当Alice<br>double spent 给Bob和Charlie时，其他人会进行验证。</p>
+<h2 id="工作量证明-Proof-of-work"><a href="#工作量证明-Proof-of-work" class="headerlink" title="工作量证明(Proof-of-work)"></a>工作量证明(Proof-of-work)</h2><p>但这种方式存在许多问题。首先，要让多少人一同验证才行，其次如果Alice在infocoin网络里部署了大量的她的傀儡机<br>让这些傀儡机来验证怎么办？<br>有一个聪明的办法，来避免这个问题——使用工作量证明(proof-of-work)，这个主意有些反直觉，并且包含两个思想<br>(1).人为地使网络用户的验证计算成本增加<br>(2).奖励他们帮助验证<br>奖励会使人们尝试去验证，即使计算成本很高。使验证成本增加的好处是，验证不在会被某个人控制的傀儡影响，除非他能调用所有的计算力来影响验证<br>这个设计是的cheater必须得花大量的计算力来实施欺骗，从而是的这种行为不切实际。这是工作量证明的主旨，但要彻底了解它你需要了解更多细节，假设Alice<br>广播了一条消息”I, Alice, am giving Bob one infocoin, with serial number 1234567”,每个人都把它添加到等待验证的队列。假设有个叫David的用户来帮助<br>检查合法性。在完成David验证之前，他还要解决一个问题，找到一个随机的数假设x使x和交易信息[I, Alice, am giving Bob one infocoin, with serial number 1234567]的<br>拼接之后的字符串的SHA-256的值小于规定的值</p>
+<blockquote>
+<p>原文说使hash值前端的0的个数小于规定值，其实是一个意思。<br><strong>注</strong>:这是bitcoin采用的方法，其目的就是人为地使网络用户的验证计算成本增加，这里作者设计infocoin也将其引用过来<br>这里的SHA-256是一种目前最常用的hash算法，之后我会写文章详细介绍，暂时可以理解为：给定一个输入之后，得出唯一的一个长度为256位的值<br>理论上要做到输入与hash一一对应，但实际上很明显存在碰撞(collsion),不过目前不必担心这一点因为总hash值达到2^256个，你可以了解一下这是多大的一个数  </p>
+</blockquote>
+<h3 id="接下来的部分是我自己写的"><a href="#接下来的部分是我自己写的" class="headerlink" title="接下来的部分是我自己写的:)"></a>接下来的部分是我自己写的:)</h3><p>难度根据以前2016个区块的产生时间，每2016块改变一次。预计每隔10分钟产生一个区块，因而产生2016个区块要花费2周时间。如果前2016个区块的产生时间多于两周<br>则难度会降低；否则难度就会增加。得出这个值之后就可以完成验证。验证的过程在比特币协议中被称为挖矿(mining).比特币协议规定，给予完成者一定的奖励，这就是第二个思想<br>的体现最初是50BTC，随后每过210,000个验证块(大约四年)，奖励减半。直到2140 CE分掉所有的bitcoin(比特币数量有限)。</p>
+<blockquote>
+<p>其实这些奖励也就是比特币的最初分配。分完所有的比特币之后就没有区块奖励了，但可以从每笔交易收取一定的手续费。<br><strong>注</strong>:读者可能会感到困惑的一点，矿工要等多少笔交易才开始计算hash，原文没有解释是因为，这是小问题，所以不必在协议里讨论，实际上这是由挖矿程序决定<br>交易量大的区块获取的手续费高:)  </p>
+</blockquote>
+<p>当做完这一切之后,一个区块也就形成了:),区块的具体结构如下   </p>
+<table>
+<thead>
+<tr>
+<th>数据项</th>
+<th style="text-align:center">描述</th>
+<th style="text-align:right">长度</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Magic</td>
+<td style="text-align:center">0xD9B4BEF9</td>
+<td style="text-align:right">4B</td>
+</tr>
+<tr>
+<td>Blocksize</td>
+<td style="text-align:center">块大小</td>
+<td style="text-align:right">4B</td>
+</tr>
+<tr>
+<td>Blockheader</td>
+<td style="text-align:center">块头</td>
+<td style="text-align:right">80B</td>
+</tr>
+<tr>
+<td>Transaction num</td>
+<td style="text-align:center">交易数量</td>
+<td style="text-align:right">1-9B</td>
+</tr>
+<tr>
+<td>transactions</td>
+<td style="text-align:center">交易列表</td>
+</tr>
+</tbody>
+</table>
+<h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><h3 id="篡改账本怎么办"><a href="#篡改账本怎么办" class="headerlink" title="篡改账本怎么办"></a>篡改账本怎么办</h3><pre><code>无法改变账本,因为交易信息基于对称加密算法,以后会写文章解释:)
+</code></pre><h3 id="数名矿工同时产生同一hash的block怎么办"><a href="#数名矿工同时产生同一hash的block怎么办" class="headerlink" title="数名矿工同时产生同一hash的block怎么办"></a>数名矿工同时产生同一hash的block怎么办</h3><pre><code>任何时刻，都以当前最长分支作为主账簿，但是保留其它分支。在一定时间内非主干的分支或过期，如果你没能比过别人，那你这个块就白挖了:)
+</code></pre><h3 id="利用主干机制double-spend怎么办"><a href="#利用主干机制double-spend怎么办" class="headerlink" title="利用主干机制double spend怎么办"></a>利用主干机制double spend怎么办</h3><pre><code>这个攻击过程大概是这样的  
+第一步，攻击者准备从受害者A手里买10比特币的黄金，他签署交易单给受害者A，转10个比特币给受害者A。  
+</code></pre><p><img src="http://jbcdn2.b0.upaiyun.com/2013/12/1trjrjyj4.png" alt="pic1"><br>    第二步，这笔交易在最新的账簿页中被确认，并被各个挖矿小组公告出来。受害人A看到公告，确认比特币到账，给了攻击者10个比特币等值的黄金。<br><img src="http://jbcdn2.b0.upaiyun.com/2013/12/rhrtjytjyt15.png" alt="pic1"><br>    第三步，攻击者找到账簿，从包含刚才交易的账簿页的前一页做出一个分支，生成更多的账单页，超过刚才的分支。由于此时刚才攻击者制造的分支变成了主干分支，<br>    而包含受害者A得到钱的分支变成了旁支，因此挖矿组织不再承认刚才的转账，受害者A得到的10比特币被取消了。<br><img src="http://jbcdn2.b0.upaiyun.com/2013/12/1gfnfgmnmh6.png" alt="pic1"><br>    第四步，攻击者可以再次签署交易单，将同一笔钱支付给受害者B。受害者B确认钱到账后，支付给攻击者等值黄金。<br>    关于这种攻击，中本聪给出的解决方案是，建议收款人不要在公告挂出时立即确认交易完成，而是应该再看一段时间，等待各个挖矿小组再挂出<strong>6</strong>张确认账簿，<br>    并且之前的账簿没有被取消，才确认钱已到账。</p>
+<blockquote>
+<p>这样做的目的是使恶意的攻击者更难造出新的分支来使最初交易的块无效。  </p>
+</blockquote>
+<h3 id="比特币有serial-number吗"><a href="#比特币有serial-number吗" class="headerlink" title="比特币有serial number吗"></a>比特币有serial number吗</h3><pre><code>没有，比特币通过检查历史交易确定你是否有足够的余额
+</code></pre>
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/shaky-maple/shaky-maple.github.io" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 GU XIAYU<br></p>
+                <!--<p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>-->
+                <p class="copyright text-muted">Theme from Clean-Blog</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
