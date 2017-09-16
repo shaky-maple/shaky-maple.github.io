@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="reference: sha256-384-512.pdf
+SHA-256是目前使用最为广泛的一种hash算法,是SHA-2算法家族的一员,当你听到SHA-2一定会想有没有SHA-1,当然有了!SHA算法家族包括SHA-0,SHA-1,SHA-2和SHA-3:),本文只讨论SHA-2中的SHA-25">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="GU XIAYU">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="SHA-256"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Technology, Life and Tangent!"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>SHA-256 - Technology, Life and Tangent!</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="/img/icon.png">
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Donnadie</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                Home
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/shaky-maple/shaky-maple.github.io">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>SHA-256</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-09-16
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/algorithm/">#algorithm</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/2017-9/">2017-9</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>reference: <a href="http://www.iwar.org.uk/comsec/resources/cipher/sha256-384-512.pdf" target="_blank" rel="external">sha256-384-512.pdf</a></p>
+<p><em>SHA-256</em>是目前使用最为广泛的一种<em>hash</em>算法,是SHA-2算法家族的一员,当你听到SHA-2一定会想有没有SHA-1,当然有了!SHA算法家族包括SHA-0,SHA-1,SHA-2和<br>SHA-3:),本文只讨论SHA-2中的SHA-256,SHA-256由<em>United States National Security Agency (NSA)</em>设计的一种算法,至于为什么叫<em>SHA-256</em>是因为<br>它产生的摘要(digests)的长度为256bits:)  </p>
+<p>要了解<em>hash</em>算法,我们先来谈谈什么叫<em>hash</em>,这个词在柯林斯词典中有”把食物弄碎,把事情糟”的意思,顾名思义我们可以这样理解<em>hash</em>,把messages弄碎<br>形成一小堆碎屑(是不是很形象,不得不佩服老外起名字的想象力),通俗地说理论上其目的在于:对于给定的任意长度的信息(messages),产生一个唯一hash value即摘要,<br>这个摘要唯一的代表message并且哪怕只改动输入的1bits,结果也必须不同,在SHA-256中,这个hash value的值的长度为256bits。本质上说就是一种映射(map),但是你用脚趾头都可以想到必定存在碰撞(collions)<br>因为SHA-256总共就只有2^256个不同的值,而任意长度的输入却有无限个:(,那怎么办呢？凉拌!还是因为SHA-256总共就只有2^256个不同的值,2^256是个极大的值,约等<br>于1.16 * 10^77,让我们更为直观的感受一下:如果把沙子看做边长1mm的立方体，而整个地球全是由沙子构成的话，那么沙子的数量约为10^21,所以在目前的情况下,不必<br>担心碰撞(collions),在人类目前的计算能力下,可以说无法破解SHA-256,也正是由于这个原因SHA-256才成为SHA-1的替代算法(2017年年初Google和CWI联合宣布彻底破解SHA-1<br>经过9,223,372,036,854,775,808次SHA-1计算)我们可以发现尽管SHA-1可以被a practical collision attack攻击,但这种攻击的代价任然不是个人能够承受的起得。</p>
+<h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><p>验证数据完整性</p>
+<h2 id="计算过程"><a href="#计算过程" class="headerlink" title="计算过程"></a>计算过程</h2><ol>
+<li><p>padding<br>假设message M的长度为 L,则在信息尾部添加<code>0b1</code>,接着添加k个<br><code>0b0</code>,并使得 L+k+1 ≡ 448 mod 512,区最小的非负k值,接着添加64bits的内容表示原始信息的长度。比如对于长度448bits的信息,我们先添加<code>0b1</code>接着添加511个<code>0b0</code><br>接着添加‭(000…111000000‬)长度为64bits,填完之后总长度为448+1+511+64=1024bits。</p>
+</li>
+<li><p>parsing<br>将信息按每个块512bits(64B)分为M(0) M(1)…,上例可分为两个块M(0) M(1),接着将每一大块分为16小块,每一小块为32bits,以第一大块威力记为M(0)(0) M(0)(1)..M(0)(15)</p>
+</li>
+<li><p>six logical functions</p>
+<p> 以下每个基本函数函数都是以32bits字为输入32bits为输出</p>
+ <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// two basic funcs</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> SHA256_ROTL(a,b)   (((a&gt;&gt;(32-b))&amp;(0x7fffffff&gt;&gt;(31-b)))|(a&lt;&lt;b))</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> SHA256_SR(a,b)     ((a&gt;&gt;b)&amp;(0x7fffffff&gt;&gt;(b-1)))</span></div><div class="line"><span class="comment">// six logical funcs</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> SHA256_Ch(x,y,z)   ((x&amp;y)^((~x)&amp;z))</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> SHA256_Maj(x,y,z)  ((x&amp;y)^(x&amp;z)^(y&amp;z))</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> SHA256_E0(x)       (SHA256_ROTL(x,30)^SHA256_ROTL(x,19)^SHA256_ROTL(x,10))</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> SHA256_E1(x)       (SHA256_ROTL(x,26)^SHA256_ROTL(x,21)^SHA256_ROTL(x,7))</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> SHA256_O0(x)       (SHA256_ROTL(x,25)^SHA256_ROTL(x,14)^SHA256_SR(x,3))</span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> SHA256_O1(x)       (SHA256_ROTL(x,15)^SHA256_ROTL(x,13)^SHA256_SR(x,10))</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>main loop</p>
+</li>
+</ol>
+<p>hash计算的主循环如下:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="comment">//64个32比特字的常数（前64个素数的立方根小数前32位）  </span></div><div class="line">K[<span class="number">64</span>] = &#123;  </div><div class="line">        <span class="number">0x428a2f98</span>, <span class="number">0x71374491</span>, <span class="number">0xb5c0fbcf</span>, <span class="number">0xe9b5dba5</span>, <span class="number">0x3956c25b</span>, <span class="number">0x59f111f1</span>, <span class="number">0x923f82a4</span>, <span class="number">0xab1c5ed5</span>,  </div><div class="line">        <span class="number">0xd807aa98</span>, <span class="number">0x12835b01</span>, <span class="number">0x243185be</span>, <span class="number">0x550c7dc3</span>, <span class="number">0x72be5d74</span>, <span class="number">0x80deb1fe</span>, <span class="number">0x9bdc06a7</span>, <span class="number">0xc19bf174</span>,  </div><div class="line">        <span class="number">0xe49b69c1</span>, <span class="number">0xefbe4786</span>, <span class="number">0x0fc19dc6</span>, <span class="number">0x240ca1cc</span>, <span class="number">0x2de92c6f</span>, <span class="number">0x4a7484aa</span>, <span class="number">0x5cb0a9dc</span>, <span class="number">0x76f988da</span>,  </div><div class="line">        <span class="number">0x983e5152</span>, <span class="number">0xa831c66d</span>, <span class="number">0xb00327c8</span>, <span class="number">0xbf597fc7</span>, <span class="number">0xc6e00bf3</span>, <span class="number">0xd5a79147</span>, <span class="number">0x06ca6351</span>, <span class="number">0x14292967</span>,  </div><div class="line">        <span class="number">0x27b70a85</span>, <span class="number">0x2e1b2138</span>, <span class="number">0x4d2c6dfc</span>, <span class="number">0x53380d13</span>, <span class="number">0x650a7354</span>, <span class="number">0x766a0abb</span>, <span class="number">0x81c2c92e</span>, <span class="number">0x92722c85</span>,  </div><div class="line">        <span class="number">0xa2bfe8a1</span>, <span class="number">0xa81a664b</span>, <span class="number">0xc24b8b70</span>, <span class="number">0xc76c51a3</span>, <span class="number">0xd192e819</span>, <span class="number">0xd6990624</span>, <span class="number">0xf40e3585</span>, <span class="number">0x106aa070</span>,  </div><div class="line">        <span class="number">0x19a4c116</span>, <span class="number">0x1e376c08</span>, <span class="number">0x2748774c</span>, <span class="number">0x34b0bcb5</span>, <span class="number">0x391c0cb3</span>, <span class="number">0x4ed8aa4a</span>, <span class="number">0x5b9cca4f</span>, <span class="number">0x682e6ff3</span>,  </div><div class="line">        <span class="number">0x748f82ee</span>, <span class="number">0x78a5636f</span>, <span class="number">0x84c87814</span>, <span class="number">0x8cc70208</span>, <span class="number">0x90befffa</span>, <span class="number">0xa4506ceb</span>, <span class="number">0xbef9a3f7</span>, <span class="number">0xc67178f2</span>,  </div><div class="line">        &#125; </div><div class="line"><span class="comment">//W值</span></div><div class="line"></div><div class="line">Wj = M(i)j <span class="keyword">for</span> j = <span class="number">0</span>,<span class="number">1.</span>...<span class="number">.15</span> <span class="comment">//前15个直接由小块产生</span></div><div class="line">For j = <span class="number">16</span> to <span class="number">63</span>              <span class="comment">//后面的由递推得到</span></div><div class="line">&#123;</div><div class="line">    W[j] = O1(W[j<span class="number">-2</span>]) + W[j<span class="number">-7</span>] + O0(W[j<span class="number">-15</span>]) + W[j<span class="number">-16</span>]</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line">For i = <span class="number">1</span> to N(N为大块的数量)</div><div class="line">&#123;</div><div class="line">    <span class="comment">//存储8个杂凑值,取自前8个素数（2、3、5、7、11、13、17、19）的平方根的小数部分其二进制表示的前32位</span></div><div class="line">    a = <span class="number">0x6a09e667</span>;  </div><div class="line">    b = <span class="number">0xbb67ae85</span>;  </div><div class="line">    c = <span class="number">0x3c6ef372</span>;  </div><div class="line">    d = <span class="number">0xa54ff53a</span>;  </div><div class="line">    e = <span class="number">0x510e527f</span>;  </div><div class="line">    f = <span class="number">0x9b05688c</span>;  </div><div class="line">    g = <span class="number">0x1f83d9ab</span>;  </div><div class="line">    h = <span class="number">0x5be0cd19</span>;  </div><div class="line">    <span class="comment">//使用SHA-256 compression function来更新a b c d e f g h</span></div><div class="line">    For j = <span class="number">0</span> to <span class="number">63</span></div><div class="line">    &#123;</div><div class="line">        </div><div class="line">        <span class="comment">//计算 Ch(e, f, g), Maj(a, b, c), Sigma0(a), Sigma1(e), and Wj</span></div><div class="line">        T1 =  h + Sigma1(e) + Ch(e, f, g) + K[j] + W[j]</div><div class="line">        T2 =  Sigma<span class="number">0</span>(a) + Maj(a, b, c)</div><div class="line">        h =  g</div><div class="line">        g =  f</div><div class="line">        f =  e</div><div class="line">        e =  d + T1</div><div class="line">        d =  c</div><div class="line">        c =  b</div><div class="line">        b =  a</div><div class="line">        a =  T1 + T2</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//计算第i个中间hash值</span></div><div class="line">    H(i)<span class="number">1</span> =  a + H(i<span class="number">-1</span>)<span class="number">1</span> <span class="comment">//0x6a09e667</span></div><div class="line">    H(i)<span class="number">2</span> =  b + H(i<span class="number">-1</span>)<span class="number">2</span> <span class="comment">//0xbb67ae85</span></div><div class="line">    ...</div><div class="line">    H(i)<span class="number">8</span> =  h + H(i<span class="number">-1</span>)<span class="number">8</span> <span class="comment">//0x5be0cd19</span></div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">hash value of message = (H(N)<span class="number">1</span> + H(N)<span class="number">2</span> +... H(N)<span class="number">8</span>)</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>我这里就不给出代码了,网上有很多:)对于普通人日常使用可以借助一些工具比如python  </p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">C:\Users\xiayu&gt;python27 -c <span class="string">"import hashlib,sys;print(hashlib.sha256(sys.argv[1]).hexdigest())"</span> <span class="string">'i love you'</span>  </div><div class="line">b8463b5b794b1416091293295e8f343136a56193d2ccd14b4b973bb10c49e6e0</div></pre></td></tr></table></figure>
+<blockquote>
+<p>或者powershell</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Get-FileHash C:\Windows\notepad.exe | Format-List   </div><div class="line"></div><div class="line">Algorithm : SHA256  </div><div class="line">Hash      : DA0ACEE8F60A460CFB5249E262D3D53211EBC4C777579E99C8202B761541110A  </div><div class="line">Path      : C:\Windows\notepad.exe</div></pre></td></tr></table></figure>
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/shaky-maple/shaky-maple.github.io" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2017 GU XIAYU<br></p>
+                <!--<p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>-->
+                <p class="copyright text-muted">Theme from Clean-Blog</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
