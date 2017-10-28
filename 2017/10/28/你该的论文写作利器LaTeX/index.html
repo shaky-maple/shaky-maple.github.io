@@ -10,6 +10,9 @@
 
     <!--Description-->
     
+        <meta name="description" content="References:Wiki参考lshort-zh-cn.pdf其他语言版本好多好多TeX的区别  
+最近上了一门课关于所谓科研，虽然我一直觉得教育学讲科研就是个笑话。不过抛开这些不讲，单讲论文写作，用MS Word写论文还是比较繁琐，于是又温习了一下LaTeX。另外，这段时间实在是太忙了导致好长">
+    
 
     <!--Author-->
     
@@ -18,7 +21,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Technology, Life and Tangent!"/>
+        <meta property="og:title" content="你该知道的论文写作利器LaTeX"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +32,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +43,7 @@
 
     <!-- Title -->
     
-    <title>Technology - Technology, Life and Tangent!</title>
+    <title>你该知道的论文写作利器LaTeX - Technology, Life and Tangent!</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -144,75 +147,83 @@
 </nav>
 
     <!-- Main Content -->
-    
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
 
-<!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>#Technology</h1>
+                <div class="post-heading">
+                    <h1>你该知道的论文写作利器LaTeX</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2017-10-28
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Technology/">#Technology</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/2017-10/">2017-10</a>
+
+                    
+                </div>
             
-                <div class="post-preview">
-    <a href="/2017/10/28/你该的论文写作利器LaTeX/">
-        <h1 class="post-title archive">
-            你该知道的论文写作利器LaTeX
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-10-28
-    </p>
-</div>
+
+            <!-- Gallery -->
             
-                <div class="post-preview">
-    <a href="/2017/09/01/Markdown/">
-        <h1 class="post-title archive">
-            使用Markdown书写文章
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-09-01
-    </p>
-</div>
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>References:<br><a href="https://en.wikipedia.org/wiki/TeX" target="_blank" rel="external">Wiki参考</a><br><a href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/info/lshort/chinese/" target="_blank" rel="external">lshort-zh-cn.pdf</a><br><a href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/info/lshort/" target="_blank" rel="external">其他语言版本</a><br><a href="http://blog.csdn.net/lnxfei/article/details/43900305" target="_blank" rel="external">好多好多TeX的区别</a>  </p>
+<p>最近上了一门课关于所谓科研，虽然我一直觉得教育学讲科研就是个笑话。不过抛开这些不讲，单讲论文写作，用<strong>MS Word</strong>写论文还是比较繁琐，于是又温习了一下<strong>LaTeX</strong>。另外，这段时间实在是太忙了导致好长时间不写文章了，再不写有点说不过去了。本来想比较详细的教程，后来<em>Google</em>了一番发现了一篇非常好的教程，而且找到了中文版，也就省的我啰嗦：）我自己也复习了一遍。</p>
+<p>不过我觉得还是有必要讲一讲<strong>TeX</strong>  </p>
+<p><strong>TEX</strong>（希腊语：/tɛx/[1]，音译“泰赫”，文本模式下写作<strong>TeX</strong>），是一个由美国计算机教授高德纳（<em>Donald Ervin Knuth</em>）（一个我非常尊敬，不仅在技术上让我五体投地，更在精神上超越了一般的大牛的教授）编写的功能强大的排版软件。它在学术界十分流行，特别是数学、物理学和计算机科学界。TEX被普遍认为是一个优秀的排版工具，特别是在处理复杂的数学公式时。利用诸如是LaTEX等终端软件，TEX就能够排版出精美的文本以帮助人们辨认和查找。TEX的MIME类型为<em>application/x-tex</em>。TEX是自由软件（最早由Knuth编写的TeX的引擎[编译器]是开源的，后来的大部分引擎也都加入了开源社区）。</p>
+<p>当然由于<strong>Tex</strong>术语较多，且很多文章使用术语时不够严密导致这些术语难以理解，又找到了一片非常不错的博文来解释：）  </p>
+<p>最后，相对于<strong>MS Word</strong>你可能需要多花一点时间在<strong>TeX</strong>环境的搭建上，同时你还需要花一点时间了解<strong>LaTeX</strong>语法。不过我相信你学会之后一定会发现这是值得的。</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
             
-                <div class="post-preview">
-    <a href="/2017/08/30/how the bitcoin works/">
-        <h1 class="post-title archive">
-            How the Bitcoin actually works?
-        </h1>
-    </a>
-    <p class="post-meta archive">
-        <!-- Date and Author -->
-        
-        2017-08-30
-    </p>
-</div>
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
             
-            <div class="archive-before-pagination"></div>
-            <ul class="pager">
-    
-    
-</ul>
         </div>
     </div>
-</div>
-
+</article>
 
     <!-- Footer -->
     <hr />
